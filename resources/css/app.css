@@ -1,0 +1,14 @@
+/* body{
+    background-color: red;
+} */
+
+button{
+    background-color: chartreuse;
+    border: none;
+    font-size: 1.5rem;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+hr{
+    margin-top: 2rem;
+}
