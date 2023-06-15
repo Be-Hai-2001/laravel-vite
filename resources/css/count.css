@@ -1,0 +1,9 @@
+.input-job{
+    box-shadow: 5px 5px 8px blue, 10px 10px 8px red, 15px 15px 8px green;
+    border: 1px solid;
+    padding: 10px;
+}
+
+.margin-btn-bw{
+    margin: 0 1rem;
+}

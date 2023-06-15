@@ -1,16 +1,25 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import * as ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './components/App';
 import { ExampleCounter_1, Mouse } from './components/Counter';
 import { ExampleCounter_2 } from './components/Counter';
+import Content from './components/UseEffect';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-    {/* <ExampleCounter_1/>
-    <ExampleCounter_2/> */}
-    <Mouse/>
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+
+// ReactDOM.createRoot(document.getElementById('root')).render(
+//    <React.StrictMode>
+//     <App />
+//     <Mouse/>
+//   </React.StrictMode>,
+// )
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(
+    <React.StrictMode>
+        {/* <App /> */}
+        <Mouse/>
+        <Content/>
+    </React.StrictMode>,
+)

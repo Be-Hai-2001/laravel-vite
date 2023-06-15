@@ -1,4 +1,6 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
+import '../../css/count.css';
+import Content from "./UseEffect";
 
 function ExampleCounter_1(){
     const [count, setCount] = useState(0);
@@ -14,6 +16,7 @@ function ExampleCounter_1(){
 
 // Initial satte với callback
 function ExampleCounter_2(){
+    //setState vẫn làm dc chỉ không đúng mặt cú pháp, giao diện phải rede liên tực
     const[infor,setInfor] = useState({
         name: 'Nguyễn Minh Hải',
         age : 22,
@@ -21,12 +24,18 @@ function ExampleCounter_2(){
         Job: 'Chưa có',
     });
 
-    const handelUpdate = (newJjob) =>{
+    useEffect(()=>{
+        infor.Job = infor.Job
+    });
+
+
+    const handelUpdate = (newJ) =>{
         setInfor({
             ...infor,
-            Job:newJjob
+            Job:newJ
         });
     }
+
     return(
         <>
 
@@ -35,7 +44,11 @@ function ExampleCounter_2(){
             <h2>Quê quán: {infor.address}</h2>
             <h2>Công việc: {infor.Job}</h2>
 
-            <input type="text" onChange={(e)=>{handelUpdate(e.target.value)}}/>
+            <input
+                className="input-job"
+                value={infor.Job}
+                onChange={(e)=>{handelUpdate(e.target.value)}}
+            />
 
         </>
     )
@@ -49,7 +62,8 @@ function Mouse(){
     return(
         <div>
             {show && <ExampleCounter_1/>} <hr />
-            {show && <ExampleCounter_2/>} <hr />
+            {show && <ExampleCounter_2 />} <hr />
+            {/* {show && <Content/>} */}
 
             <p><button onClick={ () => {
                 if(show == true){
@@ -64,6 +78,8 @@ function Mouse(){
                 }
                 return [setShow(!show), setContent];
             } } >{content.hidden}</button></p>
+
+            {/* {show && <button></button>} */}
         </div>
     )
 }
