@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import '../../css/count.css';
 import Content from "./UseEffect";
+import App from "./App";
 
 function ExampleCounter_1(){
     const [count, setCount] = useState(0);
@@ -17,6 +18,7 @@ function ExampleCounter_1(){
 // Initial satte với callback
 function ExampleCounter_2(){
     //setState vẫn làm dc chỉ không đúng mặt cú pháp, giao diện phải rede liên tực
+
     const[infor,setInfor] = useState({
         name: 'Nguyễn Minh Hải',
         age : 22,
